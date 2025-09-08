@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import "./LayoutDefault.scss";
+import CartMini from "../../components/CartMini";
 
 function LayoutDefault() {
   return (
@@ -10,7 +11,7 @@ function LayoutDefault() {
             <Link to="/">Logo</Link>
           </div>
           <div className="layout-default__cart">
-            <Link to="/cart">Cart</Link>
+            <CartMini />
           </div>
         </header>
         <main className="layout-default__main">
