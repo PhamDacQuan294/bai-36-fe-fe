@@ -10,7 +10,7 @@ function LayoutDefault() {
             <Link to="/">Logo</Link>
           </div>
           <div className="layout-default__cart">
-            Gio hang
+            <Link to="/cart">Cart</Link>
           </div>
         </header>
         <main className="layout-default__main">
