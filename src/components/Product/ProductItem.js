@@ -1,5 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, UpdateQuantity } from "../../actions/cart";
+
 function ProductItem(props) {
   const { item } = props;
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cartReducer);
+  
+  const handleAddToCart = () => {
+    if(cart.some(itemCart => itemCart.id === item.id)) {
+      dispatch(UpdateQuantity(item.id));
+    } else {
+      dispatch(addToCart(item.id, item));
+    }
+  }
 
   return (
     <>
@@ -17,7 +30,7 @@ function ProductItem(props) {
         <div className="product__percent">
           {item.discountPercentage}%
         </div>
-        <button>Them vao gio hang</button>
+        <button onClick={handleAddToCart}>Them vao gio hang</button>
       </div>
     </>
   )
