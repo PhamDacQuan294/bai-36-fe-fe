@@ -3,6 +3,7 @@ import "./LayoutDefault.scss";
 import CartMini from "../../components/CartMini";
 
 function LayoutDefault() {
+
   return (
     <>
       <div className="layout-default">
